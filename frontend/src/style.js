@@ -8,5 +8,7 @@ export default makeStyles(() => ({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        fill: 'black',
+        background: 'crimson',
     }
 }))
