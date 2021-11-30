@@ -10,11 +10,12 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
 import RecipesList from '../recipes/RecipesList';
+import ingListStringArray from '../searchRecipes/searchRecipes.js';
 
 
 export default function FoundRecipes() {
   
-const [recipes, setRecipes] = useState([{}]);
+const [recipes, setRecipes] = useState([]);
 useEffect(() => {
   axios
   .get("http://localhost:5000/api/v1/restaurants")
@@ -22,6 +23,7 @@ useEffect(() => {
   .catch((error) => console.log(error));
 }, []);
 console.log(recipes)
+console.log(ingListStringArray);
 
   /*
   const [listOfRecipes, setListOfRecipes] = useState([]);
@@ -95,7 +97,9 @@ console.log(recipes)
     <ul>
       <li>{recipe.steps}</li>
     </ul>
+    <p>{ingListStringArray}</p>
     </div>
+    
     )
   )
 }

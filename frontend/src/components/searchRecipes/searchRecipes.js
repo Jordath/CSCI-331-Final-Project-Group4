@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
-// search recipes
+import FoundRecipes from '../showRecipes/showRecipes';
 
 export default function BasicTextFields() {
   let ingredientList = []
@@ -130,7 +130,7 @@ export default function BasicTextFields() {
       <TextField id="Ingredient3" name="ingredient3 "label="Ingredient3" variant="outlined" />
       <TextField id="Ingredient4" name="ingredient4" label="Ingredient4" variant="outlined" />
       <TextField id="Ingredient5" name="ingredient5" label="Ingredient5" variant="outlined" /> */}
-      <Button onClick={()=> {setPrint(true); onClickIngHandler(ingredients);}} variant="contained">Search For Recipes</Button>
+      <Button onClick={()=> {setPrint(true); onClickIngHandler(ingredients); FoundRecipes();}} variant="contained">Search For Recipes</Button>
 {/* 
       {print?
       data: null} */}
