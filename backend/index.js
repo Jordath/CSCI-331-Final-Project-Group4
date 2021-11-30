@@ -7,6 +7,10 @@ const MongoClient = mongodb.MongoClient
 
 const port = process.env.port || 8000
 
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('frontend\build'));
+}
+
 MongoClient.connect(
     process.env.RESTREVIEWS_DB_URI,
     {
