@@ -7,7 +7,7 @@ dotenv.config()
 const MongoClient = mongodb.MongoClient
 
 const port = process.env.port || 8000
-RESTREVIEWS_DB_URI='mongodb+srv://BMarceau:WinterIsComing1@cluster0.1i945.mongodb.net/recDB?retryWrites=true&w=majority'
+//RESTREVIEWS_DB_URI='mongodb+srv://BMarceau:WinterIsComing1@cluster0.1i945.mongodb.net/recDB?retryWrites=true&w=majority'
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('frontend\build'));
