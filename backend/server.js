@@ -5,7 +5,7 @@ import mongoose from "mongoose"
 import bodyParser from "body-parser"
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 
 mongoose.connect(
     "mongodb+srv://BMarceau:WinterIsComing1@cluster0.1i945.mongodb.net/recDB?retryWrites=true&w=majority",
@@ -23,7 +23,7 @@ if(process.env.NODE_ENV === 'production'){
 
 app.use(cors());
 app.use(express.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use("/api/v1/restaurants", restaurants);
