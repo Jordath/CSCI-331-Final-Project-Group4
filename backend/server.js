@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import restaurants from "./api/restaurants.route.js"
 import mongoose from "mongoose"
+import bodyParser from "body-parser"
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -22,8 +23,11 @@ if(process.env.NODE_ENV === 'production'){
 
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 app.use("/api/v1/restaurants", restaurants);
 app.use("*", (req, res) => res.status(404).json({error: "not found"}));
+console.log("connected on port " + PORT)
 
 export default app 
