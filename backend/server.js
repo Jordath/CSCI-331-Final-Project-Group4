@@ -6,7 +6,15 @@ import mongoose from "mongoose"
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-mongoose.connect('mongodb+srv://BMarceau:WinterIsComing1@cluster0.1i945.mongodb.net/recDB?retryWrites=true&w=majority');
+mongoose.connect(
+    "mongodb+srv://BMarceau:WinterIsComing1@cluster0.1i945.mongodb.net/recDB?retryWrites=true&w=majority",
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    }
+)
+.then(() => console.log("MongoDB has been connected"))
+.catch((err) => console.log(err));
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('frontend/build'));
