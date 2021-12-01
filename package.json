@@ -25,7 +25,7 @@
       "start": "cd frontend && npm start",
       "build": "react-scripts build",
       "buildHeroku": "cd frontend && npm run build",
-      "installFrontend": "cd frontend && npm install && npm install web-vitals --save-dev",
+      "installFrontend": "cd frontend && npm install && npm install web-vitals",
       "installBackend": "cd backend && npm install",
       "nodemon": "cd backend && npm install -g nodemon && nodemon server",
       "heroku-postbuild": "npm run installBackend && npm run installFrontend && npm run buildHeroku",
