@@ -22,8 +22,8 @@ useEffect(() => {
   .then(({data}) => setRecipes(data.recipes))
   .catch((error) => console.log(error));
 }, []);
-console.log(recipes)
-console.log(ingListStringArray);
+//console.log(recipes)
+
 
   /*
   const [listOfRecipes, setListOfRecipes] = useState([]);
@@ -97,7 +97,7 @@ console.log(ingListStringArray);
     <ul>
       <li>{recipe.steps}</li>
     </ul>
-    <p>{ingListStringArray}</p>
+    
     </div>
     
     )
